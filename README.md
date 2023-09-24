@@ -6,7 +6,6 @@
 3. Code Structure
 4. Technologies Used
  
-
 ## 1. Introduction
 
 The Weather App is a web application built using HTML, CSS, and JavaScript that allows users to check the current weather conditions for a specific location. This documentation provides an overview of the app's features, installation instructions, and code structure.
