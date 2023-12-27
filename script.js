@@ -14,11 +14,16 @@ function getWeather() {
     }
 
     // API endpoint for current weather data
-    const apiEndpoint = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}`;
+    const apiEndpoint = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 
     // Fetch data from the API
     fetch(apiEndpoint)
-        .then(response => response.json())
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+            return response.json();
+        })
         .then(data => {
             // Handle the retrieved data and update the UI
             displayWeather(data);
